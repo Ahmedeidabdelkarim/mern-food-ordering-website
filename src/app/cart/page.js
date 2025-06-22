@@ -82,7 +82,7 @@ export default function CartPage() {
   }
 
   return (
-    <section className="mt-8">
+    <section className="my-8">
       <div className="text-center">
         <SectionHeaders mainHeader="Cart" />
       </div>
