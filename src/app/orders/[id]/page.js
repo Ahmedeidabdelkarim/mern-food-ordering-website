@@ -45,7 +45,7 @@ export default function OrderPage() {
         </div>
       </div>
       {loadingOrder && (
-        <div>Loading order...</div>
+        <div className="text-center py-4 text-gray-500">Loading order...</div>
       )}
       {order && (
         <div className="grid md:grid-cols-2 md:gap-16">
