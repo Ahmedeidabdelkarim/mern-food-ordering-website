@@ -1,7 +1,8 @@
 import {Order} from "@/app/models/Order";
 import mongoose from "mongoose";
 import {getServerSession} from "next-auth";
-import { authOptions,isAdmin } from "../auth/[...nextauth]/route";
+import { authOptions } from "../auth/[...nextauth]/route";
+import { isAdmin } from "../isAdmin/isAdmin";
 
 export async function GET(req) {
   mongoose.connect(process.env.MONGO_URL);
