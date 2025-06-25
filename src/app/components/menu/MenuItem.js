@@ -3,6 +3,8 @@ import MenuItemTile from "@/app/components/menu/MenuItemTile";
 import Image from "next/image";
 import {useContext, useState} from "react";
 import toast from "react-hot-toast";
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css";
 
 export default function MenuItem(menuItem) {
   const {
@@ -24,6 +26,17 @@ export default function MenuItem(menuItem) {
       return;
     }
     addToCart(menuItem, selectedSize, selectedExtras);
+    Toastify({
+      text: "Product added to cart!",
+      duration: 2000,
+      gravity: "top",
+      position: "right",
+      style: {
+        background: "#4caf50",
+        borderRadius: "8px",
+      },
+      className: "text-white font-bold"
+    }).showToast();
     await new Promise(resolve => setTimeout(resolve, 1000));
     console.log('hiding popup');
     setShowPopup(false);
